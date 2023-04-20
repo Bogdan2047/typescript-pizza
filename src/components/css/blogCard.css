@@ -1,0 +1,10 @@
+.card {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.card-header {
+  background-color: #fe5f1e;
+  color: white;
+}

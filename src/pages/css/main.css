@@ -1,0 +1,26 @@
+.main-select {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  width: 94%;
+}
+
+.select {
+  padding-top: 40px;
+}
+
+.select button {
+  border-radius: 40px;
+  margin-left: 10px;
+}
+
+.filters {
+  padding-top: 53px;
+}
+
+.pizza {
+  margin: 0;
+  padding-top: 32px;
+  padding-left: 67px;
+  text-align: start;
+}

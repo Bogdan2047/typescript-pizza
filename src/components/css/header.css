@@ -1,0 +1,38 @@
+.header {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: #f6f6f6 1px solid;
+}
+
+.header-logo {
+  padding-top: 49px;
+  padding-left: 77px;
+}
+
+.basket {
+  padding-top: 52px;
+  padding-right: 39px;
+  padding-bottom: 35px;
+  width: 300px;
+}
+
+.basket button {
+  background-color: #fe5f1e;
+  color: white;
+}
+
+.btn-bt {
+  padding: 16px 26px;
+  border-radius: 40px;
+  border-style: none;
+}
+
+.btn-bt span {
+  font-weight: 600;
+}
+
+.btn-blog {
+  padding-top: 65px;
+  padding-right: 100px;
+}

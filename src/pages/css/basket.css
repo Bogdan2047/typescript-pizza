@@ -1,0 +1,162 @@
+.basket-empty {
+  margin: 0 auto;
+  padding-top: 164px;
+}
+
+.empty-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.empty-text h1 {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.empty-text span {
+  color: #777777;
+  font-size: 18px;
+}
+
+.empty-img {
+  padding-top: 47px;
+  padding-bottom: 74px;
+}
+
+.empty-btn button {
+  border-style: none;
+  padding: 10px 20px;
+  border-radius: 40px;
+  color: white;
+  background-color: #282828;
+}
+
+.empty-btn {
+  padding-bottom: 163px;
+}
+
+.basket-content {
+  margin: 0;
+  padding: 0;
+}
+
+.delete-basket {
+  padding-top: 10px;
+}
+
+.delete-basket img {
+  margin-right: 5px;
+}
+
+.basket-intro {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 94px;
+  padding-bottom: 30px;
+}
+
+.basket-name {
+  display: flex;
+}
+
+.basket-name img {
+  width: 29px;
+  height: 29px;
+  margin-top: 10px;
+}
+
+.basket-name h1 {
+  padding-left: 20px;
+}
+
+.basket-order {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  border-top: 1px #f4f4f4 solid;
+  border-bottom: 1px #f4f4f4 solid;
+  width: 80%;
+}
+
+.basket-order-img {
+  padding: 30px 0;
+}
+
+.basket-order-img img {
+  width: 80px;
+  height: 80px;
+}
+
+.basket-order-data {
+  padding-top: 44px;
+  text-align: start;
+  width: 300px;
+}
+
+.basket-order-data h6 {
+  color: grey;
+}
+
+.basket-order-count {
+  display: flex;
+  flex-direction: row;
+  padding-top: 54px;
+  justify-content: space-between;
+  width: 100px;
+}
+
+.basket-order-count button {
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  border: 1px #fe5f1e solid;
+  background-color: white;
+  color: #fe5f1e;
+}
+
+.btn-skip {
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  border: 1px #d7d7d7 solid;
+  background-color: white;
+  color: #d7d7d7;
+}
+
+.basket-order-price {
+  padding-top: 54px;
+  width: 150px;
+}
+
+.basket-order-delete {
+  padding-top: 54px;
+}
+
+.basket-sum {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.basket-order-all-count h4 span {
+  font-weight: 700;
+}
+
+.basket-all-price h4 span {
+  color: red;
+}
+
+.basket-btn {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+.container {
+  min-height: 650px;
+}
