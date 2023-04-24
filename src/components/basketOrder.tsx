@@ -1,14 +1,19 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { useDispatch } from "react-redux";
-import {
-  deleteOrder,
-  getOrderPizzaMinus,
-  getOrderPizzaPlus,
-} from "../redux/actionCreator";
+import { deleteOrder, getOrderPizzaMinus, getOrderPizzaPlus } from "../rtk/slice";
 
-export const BasketOrder = (props:any) => {
-  const { id, img, name, size, dough, count, price } = props;
-  const [counts, setCounts] = useState(count);
+type ComesProps = {
+    name: string,
+    id: number,
+    img: any,
+    price: number,
+    size: any,
+    dough: any,
+    count: number,
+}
+
+export const BasketOrder:FC <ComesProps>= (props: ComesProps) => {
+  const [counts, setCounts] = useState(props.count);
 
   const dispatch = useDispatch();
 
@@ -25,25 +30,25 @@ export const BasketOrder = (props:any) => {
     dispatch(getOrderPizzaMinus(data));
   };
 
-  let data = {
-    id,
-    count,
-    price,
+  let data:any = {
+    id : props.id,
+    count : props.count,
+    price : props.price,
   };
 
   const deleteHandler = () => {
-    dispatch(deleteOrder(id));
+    dispatch(deleteOrder(props.id));
   };
 
   return (
-    <div className="basket-order" key={id}>
+    <div className="basket-order" key={props.id}>
       <div className="basket-order-img">
-        <img src={img} alt="/" />
+        <img src={props.img} alt="/" />
       </div>
       <div className="basket-order-data">
-        <h4>{name}</h4>
+        <h4>{props.name}</h4>
         <h6>
-          {typeNames[dough]}, {typeSize[size]} см.
+          {typeNames[props.dough]}, {typeSize[props.size]} см.
         </h6>
       </div>
       <div className="basket-order-count">
@@ -56,7 +61,7 @@ export const BasketOrder = (props:any) => {
         </button>
       </div>
       <div className="basket-order-price">
-        <h4>{price} грн.</h4>
+        <h4>{props.price} грн.</h4>
       </div>
       <div className="basket-order-delete">
         <button className="btn-skip" onClick={deleteHandler}>

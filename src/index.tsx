@@ -2,20 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.scss";
 import App from "./App";
-import { applyMiddleware, compose, createStore } from "redux";
-import { RootReducer } from "./redux/rootReducer";
+// import { applyMiddleware, compose, createStore } from "redux";
+// import { RootReducer } from "./redux/rootReducer";
 import { Provider } from "react-redux";
-import thunk from "redux-thunk";
+import {store} from "./rtk/index"
+// import thunk from "redux-thunk";
 
-declare global {
-  interface Window {
-    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
-  }
-}
+// declare global {
+//   interface Window {
+//     __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+//   }
+// }
 
-const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-let store = createStore(RootReducer, composeEnhancer(applyMiddleware(thunk)));
+// let store = createStore(RootReducer, composeEnhancer(applyMiddleware(thunk)));
 
 const app = (
   <Provider store={store}>

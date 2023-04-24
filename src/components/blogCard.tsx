@@ -8,7 +8,6 @@ type GetProps = {
 
 export const BlogCard: FC<GetProps> = (props:GetProps) => {
 
-  // const { title, body } = props
   return (
     <>
       <div className="card">

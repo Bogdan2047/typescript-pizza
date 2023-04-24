@@ -5,19 +5,20 @@ import baskets2 from "../img/basket2.png";
 import trash from "../img/trash.png";
 import "./css/basket.css";
 import { BasketOrder } from "../components/basketOrder";
-import { deleteBasket } from "../redux/actionCreator";
+// import { deleteBasket } from "../redux/actionCreator";
 import { FC } from "react";
+import { deleteBasket } from "../rtk/slice";
 
 export const Basket: FC = () => {
-  const getPizzaSelector = useSelector((state:any) => state.order.orderPizza);
+  const getPizzaSelector = useSelector((state:any) => state.toolkit.order.orderPizza);
   const dispatch = useDispatch();
-  const pizza = useSelector((state:any) => state.order.orderPizza);
+  const pizza = useSelector((state:any) => state.toolkit.order.orderPizza);
 
-  let price = pizza.reduce((sum:number, item:any) => {
+  let price = pizza?.reduce((sum:number, item:any) => {
     return item.price + sum;
   }, 0);
 
-  let count = pizza.reduce((sum:number, item:any) => {
+  let count = pizza?.reduce((sum:number, item:any) => {
     return item.count + sum;
   }, 0);
 

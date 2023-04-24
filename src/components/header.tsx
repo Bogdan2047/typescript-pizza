@@ -6,13 +6,13 @@ import { useSelector } from "react-redux";
 import { FC } from "react";
 
 export const Header: FC = () => {
-  const pizza = useSelector((state:any) => state.order.orderPizza);
+  const pizza = useSelector((state:any) => state.toolkit.order.orderPizza);
 
-  let price = pizza.reduce((sum:number, item:any) => {
+  let price = pizza?.reduce((sum:number, item:any) => {
     return item.price + sum;
   }, 0);
 
-  let count = pizza.reduce((sum:number, item:any) => {
+  let count = pizza?.reduce((sum:number, item:any) => {
     return item.count + sum;
   }, 0);
 
