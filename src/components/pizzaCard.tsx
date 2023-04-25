@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import { useDispatch } from "react-redux";
-import { getOrderPizza } from "../redux/actionCreator";
+import { getOrderPizzaMinus } from "../rtk/slice";
+// import { getOrderPizza } from "../redux/actionCreator";
 import "./css/pizza.css";
 
 type TypeProps = {
@@ -29,7 +30,7 @@ export const PizzaCard: FC <TypeProps>= (props:TypeProps) => {
 
   const counIncrement = () => {
     setPizzaorder(pizzaorder + 1);
-    dispatch(getOrderPizza(setSelected));
+    dispatch(getOrderPizzaMinus(setSelected));
   };
 
   const changePriceOfSize = (i:number) => {

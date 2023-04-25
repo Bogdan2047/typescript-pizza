@@ -6,11 +6,11 @@ import { FC } from "react";
 
 export const Blog: FC = () => {
   const dispatch = useDispatch<any>();
-  const posts = useSelector((state:any) => state.order.allPosts);
+  const posts = useSelector((state:any) => state.toolkit.order.orderPizza);
 
-  useEffect(() => {
-    dispatch(getPostsAsync());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getPostsAsync());
+  // }, []);
 
   return (
     <>
