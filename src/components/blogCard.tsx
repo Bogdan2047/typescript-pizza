@@ -3,7 +3,7 @@ import "./css/blogCard.css";
 
 type GetProps = {
   title: string,
-  body: string
+  body: string,
 }
 
 export const BlogCard: FC<GetProps> = (props:GetProps) => {
