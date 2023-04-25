@@ -1,13 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
+type TypeState = {
+  orderPizza: any[],
+  allPosts: any[],
+};
+
+const initialState: TypeState ={
+  orderPizza: [],
+  allPosts: [],
+};
 
 const state = createSlice({
   name: "pizza",
-  initialState: {
-    orderPizza: [],
-    allPosts: [],
-  },
+  initialState,
   reducers: {
-    getOrderPizza(state, action) {
+    getOrderPizza(state, action: PayloadAction<any>) {
       state.orderPizza.some((item) => {
         if (item.id === action.payload.id) {
           item.count += action.payload.count;
@@ -25,7 +32,7 @@ const state = createSlice({
         state.orderPizza = [action.payload, ...state.orderPizza];
       }
     },
-    getOrderPizzaPlus(state, action) {
+    getOrderPizzaPlus(state, action: PayloadAction<any>) {
       state.orderPizza.some((item) => {
         if (item.id === action.payload.id) {
           item.count++;
@@ -45,7 +52,7 @@ const state = createSlice({
         state.orderPizza = [action.payload, ...state.orderPizza];
       }
     },
-    getOrderPizzaMinus(state, action) {
+    getOrderPizzaMinus(state, action: PayloadAction<any>) {
       state.orderPizza.some((item) => {
         if (item.id === action.payload.id) {
           item.count--;
@@ -63,12 +70,12 @@ const state = createSlice({
         state.orderPizza = [action.payload, ...state.orderPizza];
       }
     },
-    deleteBasket(state, action) {
+    deleteBasket(state, action: PayloadAction<any>) {
       let empty = action.payload;
       empty = [];
       state.orderPizza = empty;
     },
-    deleteOrder(state, action) {
+    deleteOrder(state, action: PayloadAction<any>) {
       state.orderPizza = state.orderPizza.filter(
         (item) => item.id !== action.payload
       );

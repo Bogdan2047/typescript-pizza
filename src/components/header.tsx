@@ -2,11 +2,11 @@ import logo from "../img/Group 1.png";
 import "./css/header.css";
 import basket from "../img/basket.svg";
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { FC } from "react";
+import { useAppSelector } from "../hooks/redux";
 
 export const Header: FC = () => {
-  const pizza = useSelector((state:any) => state.toolkit.order.orderPizza);
+  const pizza = useAppSelector(state => state.Reducer.orderPizza)
 
   let price = pizza?.reduce((sum:number, item:any) => {
     return item.price + sum;

@@ -1,18 +1,17 @@
-import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import empty from "../img/vector.png";
 import baskets2 from "../img/basket2.png";
 import trash from "../img/trash.png";
 import "./css/basket.css";
 import { BasketOrder } from "../components/basketOrder";
-// import { deleteBasket } from "../redux/actionCreator";
 import { FC } from "react";
 import { deleteBasket } from "../rtk/slice";
+import { useAppDispatch, useAppSelector } from "../hooks/redux";
 
 export const Basket: FC = () => {
-  const getPizzaSelector = useSelector((state:any) => state.toolkit.order.orderPizza);
-  const dispatch = useDispatch();
-  const pizza = useSelector((state:any) => state.toolkit.order.orderPizza);
+  const getPizzaSelector = useAppSelector(state => state.Reducer.orderPizza)
+  const dispatch = useAppDispatch()
+  const pizza = useAppSelector(state => state.Reducer.orderPizza)
 
   let price = pizza?.reduce((sum:number, item:any) => {
     return item.price + sum;

@@ -1,25 +1,18 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { BlogCard } from "../components/blogCard";
-import { getPostsAsync } from "../redux/thunk";
 import { FC } from "react";
+import { useGetPostsQuery } from "../rtk/query";
 
 export const Blog: FC = () => {
-  const dispatch = useDispatch<any>();
-  const posts = useSelector((state:any) => state.toolkit.order.orderPizza);
-
-  // useEffect(() => {
-  //   dispatch(getPostsAsync());
-  // }, []);
+  const {data: posts} = useGetPostsQuery(10)
 
   return (
     <>
-      {posts.length === 0 && (
+      {posts?.length === 0 && (
         <div className="loading">
           <h1>Loading...</h1>
         </div>
       )}
-      {posts.map((item:any) => {
+      {posts?.map((item:any) => {
         return (
           <BlogCard
             key={item.id}
