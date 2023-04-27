@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../hooks/redux";
 import { deleteOrder, getOrderPizzaMinus, getOrderPizzaPlus } from "../rtk/slice";
 
 type ComesProps = {
@@ -13,9 +13,9 @@ type ComesProps = {
 }
 
 export const BasketOrder:FC <ComesProps>= (props: ComesProps) => {
-  const [counts, setCounts] = useState(props.count);
+  const [counts, setCounts] = useState<number>(props.count);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch()
 
   const typeNames = ["традиционное тесто", "тонкое тесто"];
   const typeSize = [26, 30, 40];
